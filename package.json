@@ -38,7 +38,8 @@
     "demo": "cd demo && npm run dev",
     "lint": "./node_modules/.bin/eslint src/*",
     "test": "jest --watchAll --verbose",
-    "unit": "jest --config jest.config.js --coverage"
+    "unit": "jest --config jest.config.js --coverage",
+    "prepare": "rollup -c build/rollup.js"
   },
   "license": "MIT",
   "bugs": {
