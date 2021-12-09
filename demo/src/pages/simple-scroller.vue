@@ -1,23 +1,23 @@
 <template>
   <div class="simple-page" style="height: 80vh; overflow-y: auto">
     <Container @drop="onDrop">
-      <Draggable v-for="item in items" :key="item.id">
+      <SmoothDraggable v-for="item in items" :key="item.id">
         <div class="draggable-item">
           {{item.data}}
         </div>
-      </Draggable>
+      </SmoothDraggable>
     </Container>
   </div>
 </template>
 
 <script>
-import { Container, Draggable } from 'vue-smooth-dnd'
+import { Container, SmoothDraggable } from 'vue-smooth-dnd'
 import { applyDrag, generateItems } from '../utils/helpers'
 
 export default {
   name: 'SimpleScroller',
 
-  components: {Container, Draggable},
+  components: {Container, SmoothDraggable},
 
   data () {
     return {

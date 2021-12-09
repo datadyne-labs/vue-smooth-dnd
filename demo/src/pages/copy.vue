@@ -2,42 +2,42 @@
   <div style="display: flex; justify-content: stretch; margin-top: 50px; margin-right: 50px">
     <div style="margin-left: 50px; flex: 1">
       <Container behaviour="copy" group-name="1" :get-child-payload="getChildPayload1">
-        <Draggable v-for="item in items1" :key="item.id">
+        <SmoothDraggable v-for="item in items1" :key="item.id">
           <div class="draggable-item">
             {{item.data}}
           </div>
-        </Draggable>
+        </SmoothDraggable>
       </Container>
     </div>
     <div style="margin-left: 50px; flex: 1">
       <Container group-name="1" :get-child-payload="getChildPayload2" @drop="onDrop('items2', $event)">
-        <Draggable v-for="item in items2" :key="item.id">
+        <SmoothDraggable v-for="item in items2" :key="item.id">
           <div class="draggable-item">
             {{item.data}}
           </div>
-        </Draggable>
+        </SmoothDraggable>
       </Container>
     </div>
     <div style="margin-left: 50px; flex: 1">
       <Container group-name="1" :get-child-payload="getChildPayload3" @drop="onDrop('items3', $event)">
-        <Draggable v-for="item in items3" :key="item.id">
+        <SmoothDraggable v-for="item in items3" :key="item.id">
           <div class="draggable-item">
             {{item.data}}
           </div>
-        </Draggable>
+        </SmoothDraggable>
       </Container>
     </div>
   </div>
 </template>
 
 <script>
-import { Container, Draggable } from 'vue-smooth-dnd'
+import { Container, SmoothDraggable } from 'vue-smooth-dnd'
 import { applyDrag, generateItems } from '../utils/helpers'
 
 export default {
   name: 'Copy',
 
-  components: {Container, Draggable},
+  components: {Container, SmoothDraggable},
 
   data () {
     return {

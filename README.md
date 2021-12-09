@@ -25,25 +25,25 @@ npm i vue-smooth-dnd
   <div>
     <div class="simple-page">
         <Container @drop="onDrop">            
-          <Draggable v-for="item in items" :key="item.id">
+          <SmoothDraggable v-for="item in items" :key="item.id">
             <div class="draggable-item">
               {{item.data}}
             </div>
-          </Draggable>
+          </SmoothDraggable>
         </Container>
     </div>
   </div>
 </template>
 
 <script>
-import { Container, Draggable } from "vue-smooth-dnd";
+import { Container, SmoothDraggable } from "vue-smooth-dnd";
 import { applyDrag, generateItems } from "./utils";
 export default {
   name: "Simple",
-  components: { Container, Draggable },
+  components: { Container, SmoothDraggable },
   data() {
     return {
-      items: generateItems(50, i => ({ id: i, data: "Draggable " + i }))
+      items: generateItems(50, i => ({ id: i, data: "SmoothDraggable " + i }))
     };
   },
   methods: {  
@@ -57,7 +57,7 @@ export default {
 
 ## API: Container
 
-Component that contains the draggable elements or components. Each of its children should be wrapped by **Draggable** component
+Component that contains the SmoothDraggable elements or components. Each of its children should be wrapped by **SmoothDraggable** component
 
 
 ## Properties
@@ -381,15 +381,15 @@ onDrop (dropResult) {
 	- **payload** : `object` : the payload object retrieved by calling [get-child-payload](#get-child-payload) function.
 	- **droppedElement** : `DOMElement` : the DOM element that is moved 
 
-## API: Draggable
+## API: SmoothDraggable
 
-Wrapper component for Container's children. Every child element should be wrapped with **Draggable** component.
+Wrapper component for Container's children. Every child element should be wrapped with **SmoothDraggable** component.
 
 ## Properties
 
 ### `tag`
 
-Tag name or the node definition to render the root element of the Draggable.
+Tag name or the node definition to render the root element of the SmoothDraggable.
 Default value is 'div'.
 
 ```jsx

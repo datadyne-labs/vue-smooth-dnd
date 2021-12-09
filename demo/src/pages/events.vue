@@ -27,11 +27,11 @@
           @drag-end="onDragEnd"
           @drop="onDrop(index, $event)"
         >
-          <Draggable v-for="item in items" :key="item.id">
+          <SmoothDraggable v-for="item in items" :key="item.id">
             <div class="draggable-item">
               {{ item.data }}
             </div>
-          </Draggable>
+          </SmoothDraggable>
         </Container>
       </div>
 
@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import { Container, Draggable } from 'vue-smooth-dnd'
+import { Container, SmoothDraggable } from 'vue-smooth-dnd'
 import { applyDrag, generateItems } from '../utils/helpers'
 import Vue from 'vue'
 
@@ -79,7 +79,7 @@ export default {
 
   components: {
     Container,
-    Draggable
+    SmoothDraggable
   },
 
   data () {

@@ -11,7 +11,7 @@ const wrapChild = (createElement, ctx) => {
 };
 
 export default {
-  name: 'Draggable',
+  name: 'SmoothDraggable',
   props: {
     tag: {
       validator: validateTagProp,

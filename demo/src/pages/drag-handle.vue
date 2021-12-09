@@ -1,24 +1,24 @@
 <template>
   <div class="simple-page">
     <Container @drop="onDrop" drag-handle-selector=".column-drag-handle">
-      <Draggable v-for="item in items" :key="item.id">
+      <SmoothDraggable v-for="item in items" :key="item.id">
         <div class="draggable-item">
           <span class="column-drag-handle" style="float:left; padding:0 10px;">&#x2630;</span>
           {{item.data}}
         </div>
-      </Draggable>
+      </SmoothDraggable>
     </Container>
   </div>
 </template>
 
 <script>
-import { Container, Draggable } from 'vue-smooth-dnd'
+import { Container, SmoothDraggable } from 'vue-smooth-dnd'
 import { applyDrag, generateItems } from '../utils/helpers'
 
 export default {
   name: 'DragHandle',
 
-  components: {Container, Draggable},
+  components: {Container, SmoothDraggable},
 
   data () {
     return {

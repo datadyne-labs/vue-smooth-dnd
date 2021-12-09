@@ -10,25 +10,25 @@
       </tr>
       </thead>
       <Container @drop="onDrop" tag="tbody">
-        <Draggable v-for="item in items" :key="item.id" tag="tr">
+        <SmoothDraggable v-for="item in items" :key="item.id" tag="tr">
           <td>Row {{item.data}} Column 1</td>
           <td>Row {{item.data}} Column 2</td>
           <td>Row {{item.data}} Column 3</td>
           <td>Row {{item.data}} Column 4</td>
-        </Draggable>
+        </SmoothDraggable>
       </Container>
     </table>
   </div>
 </template>
 
 <script>
-import { Container, Draggable } from 'vue-smooth-dnd'
+import { Container, SmoothDraggable } from 'vue-smooth-dnd'
 import { applyDrag, generateItems } from '../utils/helpers'
 
 export default {
   name: 'Table',
 
-  components: {Container, Draggable},
+  components: {Container, SmoothDraggable},
 
   data () {
     return {

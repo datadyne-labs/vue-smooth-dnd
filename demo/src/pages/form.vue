@@ -8,7 +8,7 @@
         drop-class="form-ghost-drop"
         :class="{isActive: true}"
       >
-        <Draggable v-for="field in form" :key="field.type">
+        <SmoothDraggable v-for="field in form" :key="field.type">
           <div
             class="form-line"
           >
@@ -55,7 +55,7 @@
               </div>
             </div>
           </div>
-        </Draggable>
+        </SmoothDraggable>
       </Container>
     </div>
   </div>

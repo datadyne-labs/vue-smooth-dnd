@@ -1,8 +1,8 @@
 import Container from './Container';
-import Draggable from './Draggable';
+import SmoothDraggable from './SmoothDraggable';
 export * from 'smooth-dnd';
 
 export {
   Container,
-  Draggable,
+  SmoothDraggable,
 };

@@ -1,7 +1,7 @@
 <template>
   <div class="simple-page">
     <Container @drop="onDrop($event)">
-      <Draggable v-for="item in items" :key="item.id">
+      <SmoothDraggable v-for="item in items" :key="item.id">
         <div v-if="item.type === 'draggable'" class="draggable-item">
           {{item.data}}
         </div>
@@ -10,7 +10,7 @@
             <h4>Sortable List</h4>
             <div class="no-cursor">
               <Container @drop="onInnerDrop(item, $event)">
-                <Draggable v-for="q in item.items" :key="q.id">
+                <SmoothDraggable v-for="q in item.items" :key="q.id">
                   <div v-if="q.type === 'draggable'" class="draggable-item">
                     {{q.data}}
                   </div>
@@ -19,33 +19,33 @@
                       <h4>Sortable List</h4>
                       <div class="no-cursor">
                         <Container @drop="onInnerDrop2(item, q, $event)">
-                          <Draggable v-for="t in q.items" :key="t.id">
+                          <SmoothDraggable v-for="t in q.items" :key="t.id">
                             <div class="draggable-item">
                               {{t.data}}
                             </div>
-                          </Draggable>
+                          </SmoothDraggable>
                         </Container>
                       </div>
                     </div>
                   </div>
-                </Draggable>
+                </SmoothDraggable>
               </Container>
             </div>
           </div>
         </div>
-      </Draggable>
+      </SmoothDraggable>
     </Container>
   </div>
 </template>
 
 <script>
-import { Container, Draggable } from 'vue-smooth-dnd'
+import { Container, SmoothDraggable } from 'vue-smooth-dnd'
 import { applyDrag, generateItems } from '../utils/helpers'
 
 export default {
   name: 'Nested',
 
-  components: {Container, Draggable},
+  components: {Container, SmoothDraggable},
 
   data () {
     const res = {

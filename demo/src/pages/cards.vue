@@ -7,7 +7,7 @@
       @drag-start="dragStart"
       :drop-placeholder="upperDropPlaceholderOptions"
     >
-      <Draggable v-for="column in scene.children" :key="column.id">
+      <SmoothDraggable v-for="column in scene.children" :key="column.id">
         <div :class="column.props.className">
           <div class="card-column-header">
             <span class="column-drag-handle">&#x2630;</span>
@@ -23,20 +23,20 @@
             drop-class="card-ghost-drop"
             :drop-placeholder="dropPlaceholderOptions"
           >
-            <Draggable v-for="card in column.children" :key="card.id">
+            <SmoothDraggable v-for="card in column.children" :key="card.id">
               <div :class="card.props.className" :style="card.props.style">
                 <p>{{ card.data }}</p>
               </div>
-            </Draggable>
+            </SmoothDraggable>
           </Container>
         </div>
-      </Draggable>
+      </SmoothDraggable>
     </Container>
   </div>
 </template>
 
 <script>
-import { Container, Draggable } from 'vue-smooth-dnd'
+import { Container, SmoothDraggable } from 'vue-smooth-dnd'
 import { applyDrag, generateItems } from '../utils/helpers'
 
 const lorem = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
@@ -91,7 +91,7 @@ const scene = {
 export default {
   name: 'Cards',
 
-  components: {Container, Draggable},
+  components: {Container, SmoothDraggable},
 
   data () {
     return {
